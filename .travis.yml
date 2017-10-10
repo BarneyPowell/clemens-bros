@@ -7,3 +7,7 @@ cache:
 script:
   - yarn build
   - yarn test
+deploy:
+  provider: surge
+  project: ./build/
+  domain: clemensbros.surge.sh
