@@ -1,0 +1,18 @@
+{
+    "id": "surgery",
+    "title": "Surgery",
+    "year": "2016",
+    "cast": {
+
+    },
+    "crew": [],
+    "videos": [
+        {
+            "title": "Trailer",
+            "source": "YouTube",
+            "path": "https://www.youtube.com/watch?v=EUgiHKmT2XM"
+        }
+    ],
+
+    "sections": ["Synopsis", "Videos", "Awards"]
+}

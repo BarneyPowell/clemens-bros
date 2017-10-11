@@ -13,6 +13,8 @@ import {
     VimeoIcon
 } from '../../shared/components/Icons';
 
+import projects from '../Project/projects.json';
+
 const Title = styled.div`
     text-transform: uppercase;
     font-family: 'Quicksand', sans-serif;
@@ -120,25 +122,6 @@ const CoverSection = FlexSection.extend`
 `;
 
 
-
-const projects = [
-    {
-        id: 'dress-rehearsal',
-        name: 'Dress Rehearsal',
-    },
-    {
-        id: 'surgery',
-        name: 'Surgery'
-    },
-    {
-        id: 'the-still',
-        name: 'The Still',
-    },
-    {
-        id: 'the-lighter',
-        name: 'The Lighter'
-    }
-];
 
 const people = [
     {

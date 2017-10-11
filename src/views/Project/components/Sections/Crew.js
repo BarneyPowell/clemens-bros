@@ -34,7 +34,7 @@ flex: 0 0 auto;
 class Crew extends Component {
     render() {
 
-        const title = this.props.settings.shouldShowTitle
+        const title = this.props.shouldShowTitle
             ? "Crew"
             : "";
 
