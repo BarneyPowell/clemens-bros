@@ -1,105 +1,28 @@
 import React, { Component } from 'react';
-import Styled from 'styled-components';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-import Header from '../../shared/components/Header';
-import Footer from '../../shared/components/Footer';
+import asyncComponent from '../../shared/components/AsyncComponent';
 
-import Main from '../../shared/components/Main';
-
-
-
-
-import Sections from './components/Sections';
-
-
-
-
-const ProjectTitle = Styled.h1`
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
-    margin-left: 1rem;
-    flex: 0 0 auto;
-
-    margin-bottom: 1rem;
-
-    text-shadow: 1px 1px 1px black;
-    span {
-        font-weight: bold;
-        font-size: 0.5em;
-    }
-`;
-
-
-
+const ProjectComponents = {
+    'surgery': asyncComponent(() => import('./Surgery')),
+    'dress-rehearsal': asyncComponent(() => import('./DressRehearsal')),
+    'the-still': asyncComponent(() => import('./TheStill')),
+    'the-lighter': asyncComponent(() => import('./TheLighter'))
+};
 
 
 class ProjectView extends Component {
 
-    state = {
-        project: null
-    };
-
-
-    componentDidMount() {   
-        const { id } = this.props.match.params;
-        fetch(`/api/projects/${id}.json`, {
-            method: 'GET'
-        }).then((response) => response.json())
-        .then((response) => {
-            this.setState({
-                project: response
-            });
-            
-        });
-    }
-
-    renderNotFound() {
-        return (
-            <div>
-            <Header/>
-            <Main />
-            <Footer />
-        </div>
-        );
-    }
-
-    renderSection(type, props) {
-
-        const sectionType = typeof type === 'object'
-            ? type.type
-            : type;
-
-        const settings = typeof type === 'object'
-            ? type.settings
-            : {
-                shouldShowTitle: true
-            };
-
-        const section = Sections[sectionType];
-        
-
-        return React.createElement(section, { ...props, settings } );
-    }
-
     render() {
-        if(!this.state.project) return this.renderNotFound();
-
-        const { project } = this.state;
-
-
+        const { id } = this.props.match.params;
         return (
-            <div>
-                <Header>
-                    <ProjectTitle>{project.title}</ProjectTitle>
-                </Header>
-                <Main>
-
-                    {project.sections.map((section, i) => this.renderSection(section, { key: section, project }))}
-
-                </Main>
-                <Footer />
-            </div>
+            <Switch>
+                
+                <Route
+                    path={`${this.props.match.url}/:section`}
+                    component={ProjectComponents[id]} />
+                    <Redirect from={`${this.props.match.url}`} to={`${this.props.match.url}/synopsis`} />
+            </Switch>
         );
     }
 }

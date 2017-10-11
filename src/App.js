@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
 import Routes from './views';
-
+import ScrollToTop from './shared/components/ScrollToTop';
 
 import './App.css';
 
@@ -13,6 +13,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <ScrollToTop>
         <div>
         <Helmet title={title} />
         <Switch>
@@ -21,6 +22,7 @@ class App extends Component {
           ))}
         </Switch>
         </div>
+        </ScrollToTop>
       </Router>
     );
   }
