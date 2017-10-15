@@ -14,9 +14,11 @@ deploy:
     project: ./build/
     domain: clemensbros.surge.sh
     skip_cleanup: true
-    on: master
+    on: 
+      branch: master
   - provider: surge
     project: ./build/
     domain: clemensbros-stage.surge.sh
     skip_cleanup: true
-    on: develop
+    on: 
+      branch: develop
