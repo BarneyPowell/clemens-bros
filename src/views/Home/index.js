@@ -2,23 +2,22 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Section from './components/Section';
+import Person from './components/Person';
 import Logo from '../../shared/components/Logo';
 import ProjectPosters from '../../shared/assets/posters';
+import SocialMediaLinks from '../../shared/components/SocialMediaLinks';
+
+import BrianClemensHeadshot from '../../shared/assets/headshots/brian-clemens.png';
 
 
-import {
-    FacebookIcon,
-    InstagramIcon,
-    TwitterIcon,
-    VimeoIcon
-} from '../../shared/components/Icons';
+
 
 import projects from '../Project/projects.json';
 
 const Title = styled.div`
     text-transform: uppercase;
     font-family: 'Quicksand', sans-serif;
-    font-size: 2.5em;
+    font-size: 1.5em;
     letter-spacing: -0.1em;
     margin-top: 1em;
 `;
@@ -74,46 +73,9 @@ const PersonList = FlexList.extend`
     margin-bottom: 1em;
 `;
 
-const PersonItem = styled.li`
-    margin-bottom: 1em; 
-    overflow: auto;
-    text-align: center;
-    .avatar {
-        display:block;
-        width: 40vw;
-        height: 40vw;
-            background-color: blue;
-        border-radius: 50%;
-    }
-
-    @media(min-width: 48em) {
-        
-    }
-`;
-
-const IconList = FlexList.extend`
-    justify-content: center;
-`;
-
-const IconItem = styled.li`
-    font-size: 2em;
-    margin: 0.5em;
-    span {
-        display: none;
-    }
-
-    a:hover {
-        color: #ff9900;
-        
-        svg {
-            fill: #ffff99 !important;
-        }
-    }
-`;
-
 const CoverSection = FlexSection.extend`
-    height: 80vh;
-    min-height: 80vh;
+    height: 90vh;
+    min-height: 90vh;
     position: relative;
     flex-direction: column;
     justify-content: center;
@@ -123,27 +85,13 @@ const CoverSection = FlexSection.extend`
 
 
 
-const people = [
-    {
-        key: 'samuel-clemens',
-        name: 'Samuel Clemens'
-    },
-    {
-        key: 'george-clemens',
-        name: 'George Clemens'
-    },
-    {
-        key: 'brian-clemens',
-        name: 'Brian Clemens OBE'
-    },
-]
 
 class Home extends Component {
     render() {
 
         const logoStyle = {
-            maxWidth: '60vw',
-            maxHeight: '50%'
+            maxWidth: '50vw',
+            maxHeight: '50vw'
         };
 
         return (
@@ -153,12 +101,7 @@ class Home extends Component {
                 <Title>Clemens Bros</Title>
             </CoverSection>
             <Section highlight>
-                <IconList>
-                    <IconItem><a href='https://twitter.com/clemensbros'><TwitterIcon /><span>Twitter</span></a></IconItem>
-                    <IconItem><a href='https://facebook.com/clemensbros'><FacebookIcon /><span>Facebook</span></a></IconItem>
-                    <IconItem><a href='https://instagram.com/clemensbros'><InstagramIcon /><span>Instagram</span></a></IconItem>
-                    <IconItem><a href='https://vimeo.com/clemensbros'><VimeoIcon /><span>Vimeo</span></a></IconItem>
-                </IconList>
+                <SocialMediaLinks />
             </Section>
             <Section light>
             <h1>Our work</h1>
@@ -171,14 +114,10 @@ class Home extends Component {
             <Section light>
             <h1>Us</h1>
                 <PersonList>
-                    {people.map((person, i) => (
-                        <PersonItem key={person.key}>
-                            <Link to={`/people/${person.key}`}>
-                                <span className='avatar' />
-                                <span className='name'>{person.name}</span>
-                            </Link>
-                        </PersonItem>
-                    ))}
+                    <Person id="samuel-clemens" name="Samuel Clemens" />
+                    <Person id="george-clemens" name="George Clemens" />
+                    <Person id="brian-clemens" name="Brian Clemens" avatarUrl={BrianClemensHeadshot} />
+        
                 </PersonList>
             </Section>
             <Section>

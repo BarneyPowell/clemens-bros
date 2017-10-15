@@ -7,16 +7,16 @@ cache:
 script:
   - yarn build
   - yarn test
+before_deploy:
+  - mv ./build/index.html ./build/200.html
 deploy:
   - provider: surge
     project: ./build/
     domain: clemensbros.surge.sh
     skip_cleanup: true
-    on:
-      branch: master
+    on: master
   - provider: surge
     project: ./build/
     domain: clemensbros-stage.surge.sh
     skip_cleanup: true
-    on:
-      branch: develop
+    on: develop
