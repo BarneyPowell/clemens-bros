@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Section from '../Section';
+import Section from '../../../shared/components/Section';
 
 class Gallery extends Component {
     render() {

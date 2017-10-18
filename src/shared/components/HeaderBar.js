@@ -10,11 +10,14 @@ const HeaderBar = Styled.nav`
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 100;
 
     .--inner {
         display: flex;
         height: 100%;
         align-items: center;
+        max-width: 63.75rem; // 1020px;
+        margin: 0 auto;
 
         a {
             flex: 0 0 auto;

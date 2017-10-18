@@ -1,33 +1,42 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import Styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Section from './components/Section';
 import Person from './components/Person';
 import Logo from '../../shared/components/Logo';
 import ProjectPosters from '../../shared/assets/posters';
 import SocialMediaLinks from '../../shared/components/SocialMediaLinks';
+import Footer from '../../shared/components/Footer';
 
 import BrianClemensHeadshot from '../../shared/assets/headshots/brian-clemens.png';
+import SamClemensHeadshot from '../../shared/assets/headshots/samuel-clemens.png';
 
 
 
 
 import projects from '../Project/projects.json';
 
-const Title = styled.div`
+const Title = Styled.div`
     text-transform: uppercase;
     font-family: 'Quicksand', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.7em;
     letter-spacing: -0.1em;
     margin-top: 1em;
 `;
 
-const FlexSection = styled.section`
+const Subtitle = Styled.div`
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+`;
+
+const FlexSection = Styled.section`
     display: flex;
 
 `;
 
-const FlexList = styled.ul`
+const FlexList = Styled.ul`
     display: flex;
     margin: 0;
     padding: 0;
@@ -39,7 +48,7 @@ const ProjectList = FlexList.extend`
     justify-content: space-around;
 `;
 
-const ProjectItem = styled.li`
+const ProjectItem = Styled.li`
     flex: 0 0 auto;
     display: block;
     background-image: ${props => `url(${ProjectPosters[props.project.id]})`} ;
@@ -71,6 +80,10 @@ const ProjectItem = styled.li`
 const PersonList = FlexList.extend`
     justify-content: space-around;
     margin-bottom: 1em;
+    a {
+        color: #cc6600;
+        text-decoration: none;
+    }
 `;
 
 const CoverSection = FlexSection.extend`
@@ -99,6 +112,7 @@ class Home extends Component {
             <CoverSection>
                 <Logo style={logoStyle} classes={['cb-logo--white']} />
                 <Title>Clemens Bros</Title>
+                <Subtitle>Independent Filmmakers</Subtitle>
             </CoverSection>
             <Section highlight>
                 <SocialMediaLinks />
@@ -114,7 +128,7 @@ class Home extends Component {
             <Section light>
             <h1>Us</h1>
                 <PersonList>
-                    <Person id="samuel-clemens" name="Samuel Clemens" />
+                    <Person id="samuel-clemens" name="Samuel Clemens" avatarUrl={SamClemensHeadshot} />
                     <Person id="george-clemens" name="George Clemens" />
                     <Person id="brian-clemens" name="Brian Clemens" avatarUrl={BrianClemensHeadshot} />
         
@@ -139,6 +153,7 @@ class Home extends Component {
                 United Kingdom
             </p>
             </Section>
+            <Footer />
             </div>
  
             

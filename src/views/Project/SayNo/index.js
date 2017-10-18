@@ -16,8 +16,8 @@ export default class extends Component
 
         const { section } = this.props.match.params;
         return <View 
-            id='dress-rehearsal'
-            title='Dress Rehearsal'
+            id='say-no'
+            title='Say No'
             project={Data}
             sections={sections}
             activeSection={section} />;

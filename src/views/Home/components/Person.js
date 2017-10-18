@@ -16,6 +16,11 @@ const PersonItem = Styled.li`
         border-radius: 50%;
     }
 
+    .name {
+        margin-top: 0.5em;
+        display: block;
+    }
+
     @media(min-width: 48em) {
         
     }

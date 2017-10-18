@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 
 import View from '../components/View';
 import Synopsis from './Synopsis';
+import Music from './Music';
 
 import Data from './data.json';
 
 const sections = {
     'synopsis': Synopsis,
+    'music': Music
 };
 
 export default class extends Component 

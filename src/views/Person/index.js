@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import Styled from 'styled-components';
 
-import Header from '../../shared/components/Header';
-import Main from '../../shared/components/Main';
+import asyncComponent from '../../shared/components/AsyncComponent';
 
-const Footer = Styled.footer`
-`;
+const PersonComponents = {
+    'brian-clemens': asyncComponent(() => import('./BrianClemens')),
+    'samuel-clemens': asyncComponent(() => import ('./SamClemens')),
+    'george-clemens': asyncComponent(() => import('./GeorgeClemens'))
+};
+
+
 
 
 
@@ -20,42 +23,16 @@ class PersonView extends Component {
         };
     }
 
-    componentDidMount() {   
-        const { id } = this.props.match.params;
-        console.log(id);
-        fetch(`/api/people/${id}.json`, {
-            method: 'GET'
-        }).then((response) => response.json())
-        .then((response) => {
-            this.setState({
-                person: response
-            });
-            
-        });
-    }
 
-    renderHeader(person) {
-        if(person === null) return null;
-        return (
-            <h1>{person.name}</h1>
-        );
-    }
+
+
 
     render() {
+        const { id } = this.props.match.params;
+       
+        const Component = PersonComponents[id];
         return (
-            <div>
-                <Header>
-                    {this.renderHeader(this.state.person)}
-                </Header>
-                <Main>
-                    <h2>About me</h2>
-                    <p>
-                    And this is where I go.
-                    </p>
-                </Main>
-                <Footer>
-                </Footer>
-            </div>
+            <Component />
         );
     }
 }

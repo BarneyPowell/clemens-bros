@@ -14,16 +14,24 @@ const Section = Styled.section`
         margin: 1em;
 
         a {
-            color: #ffcc00;
+            color: #cc6600;
+            font-weight: bold;
         }
     }
+`;
+
+const Inner = Styled.div`
+    max-width: 63.75em;
+    margin: 0 auto;
 `;
 
 export default function section(props) {
     return (
         <Section>
-            <h2>{props.title}</h2>
+            <Inner>
+            {props.title ? <h2>{props.title}</h2> : null}
             {props.children}
+            </Inner>
         </Section>
     );
 }

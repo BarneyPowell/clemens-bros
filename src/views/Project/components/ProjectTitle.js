@@ -4,10 +4,11 @@ const ProjectTitle = Styled.h1`
 font-weight: normal;
 margin: 0;
 padding: 0;
-margin-left: 1rem;
+margin: 1rem;
 flex: 0 0 auto;
-
+background-color: rgba(0,0,0,0.8);
 margin-bottom: 1rem;
+padding: 0.2em;
 
 text-shadow: 1px 1px 1px black;
 span {

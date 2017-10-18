@@ -11,7 +11,7 @@ const sections = {
     'synopsis': Synopsis,
     'cast': Cast,
     'crew': Crew
-};
+}
 
 export default class extends Component 
 {

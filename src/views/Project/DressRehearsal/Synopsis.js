@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Section from "../components/Section";
+import Section from '../../../shared/components/Section';
 
 export default class extends Component {
 

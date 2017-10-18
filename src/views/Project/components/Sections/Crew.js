@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Styled from 'styled-components';
-import Section from '../Section';
+import Section from '../../../../shared/components/Section';
 import FlexList from '../../../../shared/components/FlexList';
 
 const CrewList = FlexList.extend`

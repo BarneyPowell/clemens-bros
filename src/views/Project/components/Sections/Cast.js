@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Styled from 'styled-components';
 import FlexList from '../../../../shared/components/FlexList';
-import Section from '../Section';
+import Section from '../../../../shared/components/Section';
 
 const CastList = FlexList.extend`
     flex-direction: column;

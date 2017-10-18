@@ -2,13 +2,15 @@ import Styled from 'styled-components';
 
 const SectionNav = Styled.nav`
 
-    overflow: scroll;
+    overflow: auto;
     ::-webkit-scrollbar {
         width: 0;
         background: transparent;
     }
 
     ul {
+        max-width: 63.75em;
+        margin: 0 auto;
         flex-wrap: nowrap;
         color: rgba(255,255,255,0.8);
         li {
