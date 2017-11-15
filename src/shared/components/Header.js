@@ -36,7 +36,6 @@ const HeaderWrapper = Styled.div`
 class Header extends Component {
     render() {
 
-        console.log(this.props);
 
         const headerStyle = {
             backgroundImage: `url(${this.props.headerBackgroundImage})`

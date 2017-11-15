@@ -68,7 +68,7 @@ export default function headerBar(props) {
         <Link to='/'>
                 <LogoType>
 
-                        <Logo classes={['cb-logo--white']} />
+                        <Logo fill='white' />
                         <span>Clemens Bros</span>
 
                 </LogoType>

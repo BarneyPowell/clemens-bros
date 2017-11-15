@@ -1,11 +1,15 @@
 import Styled from 'styled-components';
 
 const SectionNav = Styled.nav`
-
+   
     overflow: auto;
     ::-webkit-scrollbar {
         width: 0;
         background: transparent;
+    }
+    
+    span.spacer {
+        
     }
 
     ul {
@@ -16,7 +20,7 @@ const SectionNav = Styled.nav`
         li {
             background-color: rgba(0,0,0,0.8);
             flex: 0 0 auto;
-            font-family: 'Quicksand', 'sans-serif';
+            font-family: 'Quicksand', sans-serif;
             text-transform: uppercase;
             font-size: 0.75em;
             font-weight: bold;

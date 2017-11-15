@@ -104,13 +104,14 @@ class Home extends Component {
 
         const logoStyle = {
             maxWidth: '50vw',
-            maxHeight: '50vw'
+            maxHeight: '50vw',
+            fill: 'white'
         };
 
         return (
             <div>
             <CoverSection>
-                <Logo style={logoStyle} classes={['cb-logo--white']} />
+                <Logo style={logoStyle} />
                 <Title>Clemens Bros</Title>
                 <Subtitle>Independent Filmmakers</Subtitle>
             </CoverSection>

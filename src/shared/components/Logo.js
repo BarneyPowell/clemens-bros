@@ -6,13 +6,11 @@ class Logo extends Component {
     render() {
         let classes = ['cb-logo'];
 
-        if(this.props.classes) {
-            classes = classes.concat(this.props.classes);
-        }
 
         const styles = {
             width: '100%',
-            height: '100%'
+            height: '100%',
+            fill: this.props.fill
         };
 
         const outerStyles = {

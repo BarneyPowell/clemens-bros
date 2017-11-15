@@ -1,8 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import { render } from 'react-snapshot';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import WebFont from 'webfontloader';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './shared/globalStyles';
+
+WebFont.load({
+    google: {
+        families: ['Lato', 'Quicksand']
+    }
+});
+
+render(<App />, document.getElementById('root'));
 registerServiceWorker();
